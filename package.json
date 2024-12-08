@@ -17,16 +17,27 @@
   ],
   "scripts": {
     "dev": "tsx index.mts",
-    "build": "tsc index.mts --declaration --outDir dist --module commonjs",
-    "postinstall": "tsc index.mts --declaration --outDir dist --module commonjs"
+    "build": "tsup",
+    "build:native": "tsup && porf dist/index.js bin/index"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@aws-sdk/client-sts": "^3.699.0",
     "@octokit/rest": "^21.0.2",
-    "typescript": "^5.7.2",
-    "@types/node": "^22"
+    "@types/node": "^22",
+    "porffor": "^0.50.23",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   },
-  "devDependencies": {
-    "tsx": "^4.19.2"
+  "tsup": {
+    "entry": [
+      "index.mts"
+    ],
+    "bundle": true,
+    "outDir": "dist",
+    "minify": false,
+    "platform": "node",
+    "target": "node18"
   }
 }
