@@ -6,12 +6,12 @@
   "author": "https://github.com/cnuss",
   "license": "MIT",
   "private": false,
-  "type": "module",
+  "main": "dist/index.mjs",
   "files": [
+    "src",
     "bin",
     "dist"
   ],
-  "bin": "dist/index.mjs",
   "scripts": {
     "dev": "tsx index.mts",
     "build": "yarn postinstall",
