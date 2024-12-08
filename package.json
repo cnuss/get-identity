@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "dev": "tsx index.mts",
-    "build": "yarn postinstall",
+    "build": "tsc index.mts --declaration --outDir dist --module commonjs",
     "postinstall": "tsc index.mts --declaration --outDir dist --module commonjs"
   },
   "dependencies": {
