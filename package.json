@@ -6,21 +6,24 @@
   "author": "https://github.com/cnuss",
   "license": "MIT",
   "private": false,
+  "type": "module",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "bin": "dist/index.mjs",
   "scripts": {
     "dev": "tsx index.mts",
-    "dev:native": "porf index.mts",
-    "build": "tsc index.mts --outDir dist --module commonjs",
-    "build:native": "yarn build && porf --module native dist/index.mjs bin/get-identity",
-    "build:run": "yarn build && node dist/index.mjs"
+    "build": "yarn postinstall",
+    "postinstall": "tsc index.mts --declaration --outDir dist --module commonjs"
   },
   "dependencies": {
     "@aws-sdk/client-sts": "^3.699.0",
-    "@octokit/rest": "^21.0.2"
+    "@octokit/rest": "^21.0.2",
+    "typescript": "^5.7.2"
   },
   "devDependencies": {
     "@types/node": "22",
-    "porffor": "^0.50.23",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2"
+    "tsx": "^4.19.2"
   }
 }
