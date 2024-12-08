@@ -1,0 +1,26 @@
+{
+  "name": "@cnuss/get-identity",
+  "version": "0.0.1",
+  "description": "Gets the identity of the current user",
+  "repository": "https://github.com/cnuss/get-identity",
+  "author": "https://github.com/cnuss",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "tsx index.mts",
+    "dev:native": "porf index.mts",
+    "build": "tsc index.mts --outDir dist --module commonjs",
+    "build:native": "yarn build && porf --module native dist/index.mjs bin/get-identity",
+    "build:run": "yarn build && node dist/index.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sts": "^3.699.0",
+    "@octokit/rest": "^21.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "22",
+    "porffor": "^0.50.23",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

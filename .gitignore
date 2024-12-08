@@ -1,0 +1,8 @@
+# Ignore everything in bin and dist except .gitkeep
+bin/*
+dist/*
+!bin/.gitkeep
+!dist/.gitkeep
+
+# Ignore node_modules
+node_modules/
